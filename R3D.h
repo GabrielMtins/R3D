@@ -20,6 +20,10 @@
 
 #include <SDL2/SDL.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
 	float x, y, z;
 } R3D_Vec3;
@@ -203,6 +207,10 @@ void R3D_End(void);
  * Cleans up its inicialization.
  */
 void R3D_Quit(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #ifdef R3D_IMPLEMENTATION
 
@@ -1661,6 +1669,6 @@ void R3D_Quit(void) {
 	free(ctx);
 }
 
-#endif
+#endif /* R3D_IMPLEMENTATION */
 
-#endif
+#endif /* R3D_H */
